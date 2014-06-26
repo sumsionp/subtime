@@ -5,9 +5,7 @@ class Timer
   def self.start(minutes, messages=nil)
     alert_start(minutes)
     count_down(minutes, messages)
-
-    # Play a chime when finished
-    `say timer done`
+    play_done_chime
   end
 
   def self.count_down(starting_with, messages)
@@ -22,5 +20,9 @@ class Timer
 
   def self.alert_start(minutes)
     puts "Starting timer for #{minutes} minutes..."
+  end
+
+  def self.play_done_chime
+    `say timer done`
   end
 end
