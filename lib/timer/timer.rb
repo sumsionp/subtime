@@ -3,10 +3,7 @@
 class Timer
 # Takes the number of minutes, and a hash of messages to be said
   def self.start(minutes, messages=nil)
-    # Alert user how many minutes the timer will run
-    puts "Starting timer for #{minutes} minutes..."
-  
-    # Set a loop to run through the number of minutes sleeping 60 sec for each one
+    alert_start(minutes)
     count_down(minutes, messages)
 
     # Play a chime when finished
@@ -21,5 +18,9 @@ class Timer
         `say #{messages[i]}`
       end
     end
+  end
+
+  def self.alert_start(minutes)
+    puts "Starting timer for #{minutes} minutes..."
   end
 end
