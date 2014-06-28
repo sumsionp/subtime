@@ -8,8 +8,8 @@ class Timer
     play_done_chime
   end
 
-  def self.count_down(starting_with, messages)
-    starting_with.downto 1 do |i|
+  def self.count_down(minutes, messages)
+    minutes.downto 1 do |i|
       sleep 60
       puts i
       if messages && messages[i]
