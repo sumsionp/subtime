@@ -13,11 +13,11 @@ class Timer
   end
 
   def count_down
-    @minutes.downto 1 do |i|
+    @minutes.downto 1 do |minute|
       sleep 60
-      puts i
-      if @messages && @messages[i]
-        `say #{@messages[i]}`
+      puts minute
+      if @messages && @messages[minute]
+        `say #{@messages[minute]}`
       end
     end
   end
