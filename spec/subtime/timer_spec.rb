@@ -4,12 +4,10 @@ require 'subtime/timer'
 describe Timer do
   describe "#start" do
     context "without messages" do
-      Given(:output) { STDOUT }
       Given(:minutes) { 0 }
       Given(:timer) { Timer.new(minutes) }
 
-      When { timer.start }
-      Then { expect(output).to receive(:puts).with("Started timer for #{minutes} minutes...") }
+      Then { expect { timer.start }.to output("Starting timer for #{minutes} minutes...\n").to_stdout }
     end
   end
 end
