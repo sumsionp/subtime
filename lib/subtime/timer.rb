@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
 class Timer
-  def initialize(minutes, messages=nil)
+  def initialize(output, minutes, messages=nil)
+    @output = output
     @minutes = minutes
     @messages = messages
   end
@@ -15,7 +16,7 @@ class Timer
   def count_down
     @minutes.downto 1 do |minute|
       sleep 60
-      puts minute
+      @output.puts minute
       if @messages && @messages[minute]
         `say #{@messages[minute]}`
       end
@@ -23,7 +24,7 @@ class Timer
   end
 
   def alert_start
-    puts "Starting timer for #{@minutes} minutes..."
+    @output.puts "Starting timer for #{@minutes} minutes..."
   end
 
   def play_done_chime
