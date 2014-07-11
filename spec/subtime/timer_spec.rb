@@ -15,6 +15,12 @@ describe Timer do
 
         timer.start
       end
+
+      it "says 'timer done' when finished" do
+        expect(timer).to receive(:`).with("say timer done")
+
+        timer.start
+      end
     end
   end
 end
