@@ -49,7 +49,7 @@ describe Timer do
 
       context "with message 'something' at 5" do
         it "says 'something'" do
-          expect(output).to receive(:`).with("say 'something'")
+          expect(timer).to receive(:`).with("say something")
 
           timer.start
         end
@@ -57,7 +57,7 @@ describe Timer do
 
       context "with message 'something else' at 2" do
         it "says 'something else'" do
-          expect(output).to receive(:`).with("say something else")
+          expect(timer).to receive(:`).with("say something else")
 
           timer.start
         end
