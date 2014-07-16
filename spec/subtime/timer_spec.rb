@@ -28,7 +28,7 @@ describe Timer do
       end
     end
 
-    context "for 10 minutes" do
+    context "for 10 minutes with messages" do
       let(:minutes) { 10 }
       let(:messages) { { 5 => "something", 2 => "something else" } }
       let(:timer) { Timer.new(output, minutes, messages) }
@@ -47,20 +47,12 @@ describe Timer do
         timer.start
       end
 
-      context "with message 'something' at 5" do
-        it "says 'something'" do
-          expect(timer).to receive(:`).with("say something")
+      it "says 'something'" do
+        expect(timer).to receive(:`).with("say something")
+        expect(timer).to receive(:`).with("say something else")
+        expect(timer).to receive(:`).with("say timer done")
 
-          timer.start
-        end
-      end
-
-      context "with message 'something else' at 2" do
-        it "says 'something else'" do
-          expect(timer).to receive(:`).with("say something else")
-
-          timer.start
-        end
+        timer.start
       end
     end
   end
