@@ -20,12 +20,6 @@ describe Timer do
 
         timer.start
       end
-
-      it "says 'timer done' when finished" do
-        expect(timer).to receive(:`).with("say timer done")
-
-        timer.start
-      end
     end
 
     context "for 10 minutes with messages" do
@@ -43,14 +37,6 @@ describe Timer do
         10.downto(1) do |minute|
           expect(output).to receive(:puts).with(minute)
         end
-
-        timer.start
-      end
-
-      it "says 'something'" do
-        expect(timer).to receive(:`).with("say something")
-        expect(timer).to receive(:`).with("say something else")
-        expect(timer).to receive(:`).with("say timer done")
 
         timer.start
       end

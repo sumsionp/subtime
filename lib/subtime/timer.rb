@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'subtime/timer_voice'
+
 class Timer
   def initialize(output, minutes, messages=nil)
     @output = output
@@ -18,7 +20,7 @@ class Timer
       sleep 60
       @output.puts minute
       if @messages && @messages[minute]
-        `say #{@messages[minute]}`
+        TimerVoice.say_message(@messages[minute])
       end
     end
   end
@@ -28,6 +30,6 @@ class Timer
   end
 
   def play_done_chime
-    `say timer done`
+    TimerVoice.say_message("timer done")
   end
 end
