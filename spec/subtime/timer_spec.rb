@@ -43,10 +43,8 @@ describe Timer do
       end
 
       it "calls the specified code blocks" do
-        expect(output).to receive(:puts).with("Something")
-        expect(output).to receive(:puts).with("something else")
-
-        timer.start
+        expect { timer.start }.to output.to_stdout
+        expect { timer.start }.to output('something else').to_stdout
       end
     end
   end
