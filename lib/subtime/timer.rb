@@ -20,7 +20,7 @@ class Timer
       sleep 60
       @output.puts minute
       if @messages && @messages[minute]
-        TimerVoice.say_message(@messages[minute])
+        @messages[minute].call
       end
     end
   end
