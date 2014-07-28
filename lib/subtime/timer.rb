@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'subtime/timer_voice'
+require_relative 'timer_voice'
 
 class Timer
   def initialize(output, minutes, messages=nil)
