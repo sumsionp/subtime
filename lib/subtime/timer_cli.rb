@@ -16,6 +16,11 @@ class TimerCLI
         options.minutes = mins
       end
 
+      opts.on("say [MESSAGE]", "Message to say") do |message|
+        options.messages = []
+        options.messages << message
+      end
+
       opts.separator ""
       opts.separator "Common options:"
 
