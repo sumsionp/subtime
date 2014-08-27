@@ -13,3 +13,5 @@ rescue OptionParser::InvalidArgument
   puts
   TimerCLI.parse(["-h"])
 end
+
+puts options
