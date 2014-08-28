@@ -5,7 +5,7 @@ class TimerCLI
   def self.parse(args)
     options = OpenStruct.new
 
-    options.messages = []
+    options.messages = {}
 
     opt_parser = OptionParser.new do |opts|
       opts.banner = "Usage: subtime [options]"
@@ -18,8 +18,8 @@ class TimerCLI
         options.minutes = mins
       end
 
-      opts.on("--say [MESSAGE]", "Message to say") do |message|
-        options.messages << message
+      opts.on("-s", "--say [MINUTE MESSAGE]", "Message to say") do |minute, message|
+        options.messages[minute] = message
       end
 
       opts.separator ""
