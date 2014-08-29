@@ -18,8 +18,12 @@ class TimerCLI
         options.minutes = mins
       end
 
-      opts.on("-s", "--say [MINUTE MESSAGE]", "Message to say") do |minute, message|
-        options.messages[minute] = message
+      opts.on("-s", "--say [MINUTE,MESSAGE]", Array,
+              "Message to say with minute to say it at",
+              "   Example: -s 9,'Get up and stretch'",
+              "   This will say 'Get up and stretch' at minute 9",
+              "   NOTE: The integer must be within the range 1-MINUTES") do |minute_message|
+        options.messages[minute_message[0]] = minute_message[1]
       end
 
       opts.separator ""
