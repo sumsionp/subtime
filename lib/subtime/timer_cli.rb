@@ -23,7 +23,7 @@ class TimerCLI
               "   Example: -s 9,'Get up and stretch'",
               "   This will say 'Get up and stretch' at minute 9",
               "   NOTE: The integer must be within the range 1-MINUTES") do |minute_messages|
-        options.messages = Hash[minute_messages.flatten(1)]
+        options.messages = Hash[*minute_messages]
       end
 
       opts.separator ""
