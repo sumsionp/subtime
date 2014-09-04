@@ -5,7 +5,7 @@ require_relative '../lib/subtime/timer_cli'
 
 begin
   options = TimerCLI.parse(ARGV)
-  timer = Timer.new(STDOUT, options.minutes)
+  timer = Timer.new(STDOUT, options.minutes, options.messages)
   timer.start
 rescue OptionParser::InvalidArgument
   puts
