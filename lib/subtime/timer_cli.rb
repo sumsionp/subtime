@@ -26,6 +26,13 @@ class TimerCLI
         if minute_messages.size.odd?
           raise OptionParser::InvalidArgument
         end
+        minute_messages.each_with_index do |minute_message, i|
+          if i.even?
+            minute_messages[i] = minute_message.to_i
+          else
+            minute_messages[i] = lambda { TimerVoice.say_message minute_message }
+          end
+        end
         options.messages = Hash[*minute_messages]
       end
 
