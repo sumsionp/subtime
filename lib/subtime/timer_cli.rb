@@ -39,6 +39,10 @@ class TimerCLI
       opts.separator ""
       opts.separator "Common options:"
 
+      opts.on_tail("--notime", "Run without actually pausing for time to go by") do
+        require_relative '../../lib/kernel/kernel'
+      end
+
       opts.on_tail("-h", "--help", "Show this message") do
         puts opts
         exit
