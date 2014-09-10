@@ -1,10 +1,6 @@
 require 'rspec/given'
 require 'subtime/timer'
-
-module Kernel
-  def sleep(seconds)
-  end
-end
+require 'kernel/kernel'
 
 describe Timer do
 
