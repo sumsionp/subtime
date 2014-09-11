@@ -4,6 +4,10 @@ require 'kernel/kernel'
 
 describe Timer do
 
+  before do
+    $stdout = StringIO.new
+  end
+
   let(:timer_output) { double('timer_output').as_null_object }
 
   describe "#start" do
