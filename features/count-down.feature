@@ -6,5 +6,5 @@ Feature: Count down
 
   Scenario: Count down from 10
 
-    When I run `timer -m 10 --notime`
+    When I run `subtime -m 10 --notime`
     Then the output should contain "10\n9\n8\n7\n6\n5\n4\n3\n2\n1\n"

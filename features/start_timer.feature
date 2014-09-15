@@ -5,5 +5,5 @@ Feature: Start Timer
 
   Scenario: Start a simple timer
 
-    When I run `timer -m 10 --notime`
+    When I run `subtime -m 10 --notime`
     Then the output should contain "Starting timer for 10 minutes..."

@@ -7,5 +7,5 @@ Feature: Sub-messages are given
   Scenario:
 
     Given the default aruba timeout is 5 seconds
-    When I run `timer -m 7 -s 5,"Minute five",4,"Minute four",2,"Minute two" --notime`
+    When I run `subtime -m 7 -s 5,"Minute five",4,"Minute four",2,"Minute two" --notime`
     Then I should hear "Minute five", "Minute four", "Minute two"
