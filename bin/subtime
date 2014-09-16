@@ -4,14 +4,14 @@ require_relative '../lib/subtime/timer'
 require_relative '../lib/subtime/timer_cli'
 
 begin
-  options = TimerCLI.parse(ARGV)
-  timer = Timer.new(STDOUT, options.minutes, options.messages)
+  options = SubTime::TimerCLI.parse(ARGV)
+  timer = SubTime::Timer.new(STDOUT, options.minutes, options.messages)
   timer.start
 rescue OptionParser::InvalidArgument
   puts
   puts "An invalid argument was supplied"
   puts
-  TimerCLI.parse(["-h"])
+  SubTime::TimerCLI.parse(["-h"])
 end
 
 puts options
