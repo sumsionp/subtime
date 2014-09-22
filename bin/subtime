@@ -13,5 +13,3 @@ rescue OptionParser::InvalidArgument
   puts
   SubTime::TimerCLI.parse(["-h"])
 end
-
-puts options
