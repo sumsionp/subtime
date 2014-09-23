@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/subtime/timer'
+
+module Kernel
+  def sleep(seconds)
+  end
+end
+
+timer = Timer.new(STDOUT, 3, { 3 => lambda { puts "minute 3" },
+                  2 => lambda { TimerVoice.say_message("minute 2") },
+                  1 => lambda { puts "pretty much finished"
+                                3.downto 1 do |i|
+                                  puts i
+                                end } })
+
+timer.start
