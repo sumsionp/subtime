@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name                        = 'subtime'
-  s.version                     = '0.1.0'
+  s.version                     = '0.1.1'
   s.date                        = '2014-09-17'
   s.author                      = 'Peter Sumsion'
   s.email                       = 'sumsionp@gmail.com'
@@ -12,4 +12,6 @@ Gem::Specification.new do |s|
   s.test_files                  = Dir["{spec,features}/**/*"]
   s.executables                 = [ 'subtime' ]
   s.required_ruby_version       = '>=2.1.1'
+
+  s.platform                    = Gem::Platform::CURRENT
 end
